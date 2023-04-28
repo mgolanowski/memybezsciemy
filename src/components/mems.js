@@ -1,5 +1,7 @@
 import React from 'react';
-
+import Upvote from './Upvote';
+import Downvote from './Downvote';
+import { useHistory } from 'react-router-dom';
 
 const images = [
   {
@@ -32,16 +34,16 @@ const images = [
   },
 ];
 
-const ImageGallery = () => {
+
+const mems = ({ image }) => {
   return (
     <div>
-      {images.map((image) => (
-        <><h3>{image.title}</h3><img key={image.id} src={image.src}/> </>
-
-
-      ))}
+      <h3>{image.title}</h3>
+      <img src={image.src} alt={image.alt} />
+      <p2>Upvotes: {image.upvotes}</p2>
+      <p2>Downvotes: {image.downvotes}</p2>
     </div>
   );
 };
 
-export default ImageGallery;
+export default mems
